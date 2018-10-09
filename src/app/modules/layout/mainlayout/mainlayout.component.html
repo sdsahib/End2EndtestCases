@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class="row no-gutters">
+    <div class="col-xs-12 col-12" id="top-navbar">
+      <nav class="navbar navbar-expand-lg navbar-light sticky-top flex-md-nowrap p-0 shadows">
+        <a class="navbar-brand" href="#">
+          <h1>Sample Testing application</h1>
+        </a>
+
+      </nav>
+    </div>
+  </div>
+  <div class="row no-gutters">
+    <div class="col-2 collapse width show" id="sidebar">
+      <div class="list-group text-center text-md-left">
+
+        <a [routerLink]="['/showtable']" routerLinkActive="active" class="list-group-item d-inline-block collapsed"
+          data-parent="#sidebar" title="Dashboard">
+
+          <span class="d-none d-md-inline">Show Table</span>
+        </a>
+      </div>
+    </div>
+    <div class="col-10 offset-2 main" id="main-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

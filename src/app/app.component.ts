@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'e2etesting';
+  nameText = '';
+
+  onSubmitButtonClick(){
+    this.nameText = "Submit Clicked";
+  }
 }
