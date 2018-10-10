@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
+import { ModalComponent } from '../modal/modal.component';
+import { UserService } from '../../services/user.service';
+import { User } from '../../model/user';
 @Component({
   selector: 'app-showtable',
   templateUrl: './showtable.component.html',
@@ -13,21 +16,17 @@ export class ShowtableComponent implements OnInit {
   ngOnInit() {
   }
 
-  open(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
-  }
+ open(){
+  const modalRef = this.modalService.open(ModalComponent);
+  modalRef.componentInstance.name = 'World';
+  modalRef.componentInstance.user = new User();
+  modalRef.componentInstance.user.id =1;
+  modalRef.componentInstance.user.fname = "sahib";
+  modalRef.componentInstance.user.lname = "singh";
+  modalRef.componentInstance.user.email ="singh@teksystems.com";
 
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return  `with: ${reason}`;
-    }
-  }
+  
+ }
+
+ 
 }

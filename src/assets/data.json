@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "fname":"Ankit",
+        "lname":"Passi",
+        "email" :"ankit@teksystems.com"
+    },
+    {
+        "id": 2,
+        "fname":"Sam",
+        "lname":"Demo",
+        "email" :"sam@teksystems.com"
+    },
+    {
+        "id": 3,
+        "fname":"Allen",
+        "lname":"cott",
+        "email" :"allen@teksystems.com"
+    }
+]

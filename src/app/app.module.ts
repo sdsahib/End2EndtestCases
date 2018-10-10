@@ -6,20 +6,28 @@ import { AppComponent } from './app.component';
 import { MainlayoutComponent } from './modules/layout/mainlayout/mainlayout.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ShowtableComponent } from './modules/layout/showtable/showtable.component';
+import { TableComponent } from './modules/layout/table/table.component';
+import { ModalComponent } from './modules/layout/modal/modal.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainlayoutComponent,
-    ShowtableComponent
+    ShowtableComponent,
+    TableComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports:[ ModalComponent],
+  entryComponents:[ModalComponent]
 })
 export class AppModule { }

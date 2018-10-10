@@ -1,0 +1,23 @@
+<div id="table">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let json of users">
+        <td>{{json?.fname}}</td>
+        <td>{{json?.lname}}</td>
+        <td>{{json?.email}}</td>
+        <td><button type="button" (click)="open(json)" class="btn btn-success">Edit</button></td>
+      </tr>
+  
+   
+    </tbody>
+  </table>
+</div>
+
+
