@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../../model/user';
 import { UserService } from '../../services/user.service';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-import { ModalComponent } from '../modal/modal.component';
+import {UpdatemodalComponent} from '../updatemodal/updatemodal.component';
 
 @Component({
   selector: 'app-table',
@@ -28,7 +28,7 @@ export class TableComponent implements OnInit {
   }
 
   open(user: User) {
-    const modalRef = this.modalService.open(ModalComponent);
+    const modalRef = this.modalService.open(UpdatemodalComponent);
   modalRef.componentInstance.name = 'World';
   modalRef.componentInstance.user = new User();
   modalRef.componentInstance.user.id =user.id;

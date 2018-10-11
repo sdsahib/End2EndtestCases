@@ -11,22 +11,26 @@ import { User } from '../../model/user';
 })
 export class ShowtableComponent implements OnInit {
   closeResult: string;
-  constructor(private modalService: NgbModal) { }
+  user: User;
+  modalRef ;
+  constructor(private modalService: NgbModal, private userService: UserService) { }
 
   ngOnInit() {
   }
 
  open(){
-  const modalRef = this.modalService.open(ModalComponent);
-  modalRef.componentInstance.name = 'World';
-  modalRef.componentInstance.user = new User();
-  modalRef.componentInstance.user.id =1;
-  modalRef.componentInstance.user.fname = "sahib";
-  modalRef.componentInstance.user.lname = "singh";
-  modalRef.componentInstance.user.email ="singh@teksystems.com";
+  this.modalRef = this.modalService.open(ModalComponent);
+  this.modalRef.componentInstance.name = 'World';
+  this.modalRef.componentInstance.user = new User();
+  this.modalRef.componentInstance.user.id =1;
+  // modalRef.componentInstance.user.fname = "sahib";
+  // modalRef.componentInstance.user.lname = "singh";
+  // modalRef.componentInstance.user.email ="singh@teksystems.com";
 
   
  }
+
+ 
 
  
 }

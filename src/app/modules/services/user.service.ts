@@ -7,10 +7,19 @@ import { User } from '../model/user';
   providedIn: 'root'
 })
 export class UserService {
-  url ='http://localhost:4200/assets/data.json';
+
+  url ='http://localhost:3000/users';
   constructor(private http: HttpClient) { }
 
   getusers():Observable<User[]>{
-    return this.http.get<User[]>(`${this.url}`);
+    return this.http.get<User[]>(`${this.url}/getAllUsers`);
+  }
+
+  saveUsers(user:User):Observable<User>{
+    return this.http.post<User>(`${this.url}/createUser`,user);
+  }
+
+  updateUsers(user: User): Observable<User> {
+    return this.http.put<User>(`${this.url}/updateUser?id=${user.id}`,user);
   }
 }

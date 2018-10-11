@@ -9,6 +9,7 @@ import { ShowtableComponent } from './modules/layout/showtable/showtable.compone
 import { TableComponent } from './modules/layout/table/table.component';
 import { ModalComponent } from './modules/layout/modal/modal.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UpdatemodalComponent } from './modules/layout/updatemodal/updatemodal.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     MainlayoutComponent,
     ShowtableComponent,
     TableComponent,
-    ModalComponent
+    ModalComponent,
+    UpdatemodalComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [],
   bootstrap: [AppComponent],
   exports:[ ModalComponent],
-  entryComponents:[ModalComponent]
+  entryComponents:[ModalComponent,
+    UpdatemodalComponent]
 })
 export class AppModule { }
