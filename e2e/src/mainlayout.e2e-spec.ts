@@ -10,28 +10,28 @@ describe('workspace-project App', () => {
     page = new MainLayoutPage();
   });
 
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Sample Testing application');
-  });
+  // it('should display welcome message', () => {
+  //   page.navigateTo();
+  //   expect(page.getParagraphText()).toEqual('Sample Testing application');
+  // });
 
-  it('should have the show table tag', () => {
-    page.navigateTo();
-    expect(page.getShowTableMenuLink().getText()).toEqual('Show Table');
-  });
+  // it('should have the show table tag', () => {
+  //   page.navigateTo();
+  //   expect(page.getShowTableMenuLink().getText()).toEqual('Show Table');
+  // });
 
-  it('should load the child routes on click of Show table menu ', () => {
+  // it('should load the child routes on click of Show table menu ', () => {
 
-    page.navigateTo();
+  //   page.navigateTo();
 
-    page.getShowTableMenuLink().click();
+  //   page.getShowTableMenuLink().click();
 
-    expect(page.getAddButton()).toBeTruthy();
-
-
+  //   expect(page.getAddButton()).toBeTruthy();
 
 
-  });
+
+
+  // });
   // it('should have the text box and Button', () => {
   //   page.navigateTo();
   //   expect(page.getNameTextBox()).toBeTruthy();

@@ -22,7 +22,7 @@ export class TableComponent implements OnInit {
         this.users = data;
       },
       err=>{
-        console.log("error occured" + err);
+        console.log("error occured" + err.message);
       }
     );
   }
