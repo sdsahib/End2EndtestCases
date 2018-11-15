@@ -10,46 +10,46 @@ describe('workspace-project App', () => {
     page = new MainLayoutPage();
   });
 
-  // it('should display welcome message', () => {
-  //   page.navigateTo();
-  //   expect(page.getParagraphText()).toEqual('Sample Testing application');
-  // });
+  it('should display welcome message', () => {
+    page.navigateTo();
+    expect(page.getParagraphText()).toEqual('Sample Testing application');
+  });
 
-  // it('should have the show table tag', () => {
-  //   page.navigateTo();
-  //   expect(page.getShowTableMenuLink().getText()).toEqual('Show Table');
-  // });
+  it('should have the show table tag', () => {
+    page.navigateTo();
+    expect(page.getShowTableMenuLink().getText()).toEqual('Show Table');
+  });
 
-  // it('should load the child routes on click of Show table menu ', () => {
+  it('should load the child routes on click of Show table menu ', () => {
 
-  //   page.navigateTo();
+    page.navigateTo();
 
-  //   page.getShowTableMenuLink().click();
+    page.getShowTableMenuLink().click();
 
-  //   expect(page.getAddButton()).toBeTruthy();
-
-
+    expect(page.getAddButton()).toBeTruthy();
 
 
-  // });
-  // it('should have the text box and Button', () => {
-  //   page.navigateTo();
-  //   expect(page.getNameTextBox()).toBeTruthy();
-  //   expect(page.getSubmitButton()).toBeTruthy();
-  // });
 
-  // it('should display name in h1 on change on textbox value', ()=> {
-  //   page.navigateTo();
-  //   page.getNameTextBox().clear();
 
-  //   page.getNameTextBox().sendKeys('Sahib');
+  });
+  it('should have the text box and Button', () => {
+    page.navigateTo();
+    expect(page.getNameTextBox()).toBeTruthy();
+    expect(page.getSubmitButton()).toBeTruthy();
+  });
 
-  //   const heading = page.getHeading().getText();
+  it('should display name in h1 on change on textbox value', ()=> {
+    page.navigateTo();
+    page.getNameTextBox().clear();
 
-  //   browser.sleep(2000);
+    page.getNameTextBox().sendKeys('Sahib');
 
-  //   expect(heading).toEqual('Sahib');
+    const heading = page.getHeading().getText();
 
-  // });
+    browser.sleep(2000);
+
+    expect(heading).toEqual('Sahib');
+
+  });
 
 });

@@ -2,7 +2,7 @@ import { browser, by, element } from 'protractor';
 
 export class showTableLayout {
     navigateTo() {
-        return browser.get('/');
+        return browser.get('/showtable');
     }
 
 
@@ -20,6 +20,10 @@ export class showTableLayout {
 
     getSaveButton() {
         return element(by.id('saveButton'));
+    }
+
+    getUpdateButton(){
+        return element(by.id('updateButton'));
     }
 
     getCancelButton() {
@@ -52,6 +56,10 @@ export class showTableLayout {
 
     getCells() {
         return this.getRowsValue().all(by.tagName('td'));
+    }
+
+    getEditButton(id){
+        return element(by.id(id));
     }
 
 

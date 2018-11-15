@@ -3,6 +3,9 @@
 
 const { SpecReporter } = require('jasmine-spec-reporter');
 
+var HtmlReporter = require('protractor-beautiful-reporter');
+
+
 exports.config = {
   allScriptsTimeout: 11000,
   specs: [
@@ -17,12 +20,18 @@ exports.config = {
   jasmineNodeOpts: {
     showColors: true,
     defaultTimeoutInterval: 30000,
-    print: function() {}
+    print: function () { }
   },
   onPrepare() {
     require('ts-node').register({
       project: require('path').join(__dirname, './tsconfig.e2e.json')
     });
-    jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
+    // jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
+
+    // Add a screenshot reporter and store screenshots to `/tmp/screenshots`:
+    jasmine.getEnv().addReporter(new HtmlReporter({
+      baseDirectory: 'tmp/screenshots',
+      docTitle: 'my reporter' // Title of report
+    }).getJasmine2Reporter());
   }
 };
